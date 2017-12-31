@@ -7,6 +7,11 @@ terraform {
   }
 }
 
+provider "aws" {
+  profile = "webblab"
+  region = "us-west-2"
+}
+
 provider "google" {
   project = "denniswebb-info"
   region  = "us-central1"
