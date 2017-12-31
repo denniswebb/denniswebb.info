@@ -1,4 +1,11 @@
 baseURL = "http://denniswebb.info/"
 languageCode = "en-us"
-title = "Dennis Webb - DevOps Engineer - Go and Python Developer"
+title = "Dennis Webb"
 theme = "purehugo"
+Paginate = 10
+
+[params]
+  twitterName = "devopscomplete"
+  githubName = "denniswebb"
+  description = "DevOps and Development"
+  google_analytics = "UA-111788534-1"
