@@ -1,0 +1,4 @@
+baseURL = "http://denniswebb.info/"
+languageCode = "en-us"
+title = "Dennis Webb - DevOps Engineer - Go and Python Developer"
+theme = "purehugo"
