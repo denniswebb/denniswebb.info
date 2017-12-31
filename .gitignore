@@ -1,5 +1,7 @@
 .idea
 
+src/public
+
 terraform/.terraform
 *.tfstate
 plan.out
