@@ -3,12 +3,37 @@ jobs:
   build:
     docker:
       - image: cibuilds/hugo
-    working_directory: ~/project
+    working_directory: /tmp/project
     steps:
       - checkout
       - run:
-          name: "Run Hugo"
+          name: Build
           command: HUGO_ENV=production hugo -v -s src/
       - run:
-          name: "Test Website"
+          name: Test
           command: htmlproofer src/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+      - store_artifacts:
+          path: /tmp/project/src/public
+  deploy:
+    docker:
+      - image: amazonlinux:2
+    working_directory: /tmp/project
+    steps:
+      - run:
+          name: Install AWS CLI
+          run: yum install -y awscli
+      - run:
+          name: Deploy
+          command: aws s3 sync src/public s3://denniswebb.info --delete
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy-job:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
