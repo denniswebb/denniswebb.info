@@ -1,9 +1,11 @@
+defaults: &defaults
+  working_directory: /tmp/project
 version: 2
 jobs:
   build:
+    <<: *defaults
     docker:
       - image: cibuilds/hugo
-    working_directory: /tmp/project
     steps:
       - checkout
       - run:
@@ -14,14 +16,20 @@ jobs:
           command: htmlproofer src/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
       - store_artifacts:
           path: /tmp/project/src/public
+      - persist_to_workspace:
+          root: src
+          paths:
+            - public
   deploy:
+    <<: *defaults
     docker:
       - image: amazonlinux:2
-    working_directory: /tmp/project
     steps:
       - run:
           name: Install AWS CLI
-          run: yum install -y awscli
+          command: yum install -y awscli tar
+      - attach_workspace:
+          at: src
       - run:
           name: Deploy
           command: aws s3 sync src/public s3://denniswebb.info --delete
@@ -31,6 +39,6 @@ workflows:
   build-deploy:
     jobs:
       - build
-      - deploy-job:
+      - deploy:
           requires:
             - build
