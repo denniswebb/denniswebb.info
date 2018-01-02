@@ -1,11 +1,53 @@
 baseURL = "http://denniswebb.info/"
 languageCode = "en-us"
 title = "Dennis Webb"
-theme = "purehugo"
-Paginate = 10
+theme = "minimal"
+googleAnalytics = "UA-111788534-1"
+enableEmoji = true
 
 [params]
-  twitterName = "devopscomplete"
-  githubName = "denniswebb"
-  description = "DevOps and Development"
-  google_analytics = "UA-111788534-1"
+    author = "Dennis Webb"
+    description = "DevOps Engineer and Developer"
+    githubUsername = "denniswebb"
+    accent = "orange"
+    showBorder = true
+    backgroundColor = "white"
+    font = "Fira Mono"
+    highlight = true
+    highlightStyle = "tomorrow-night"
+    highlightLanguages = ["bash", "diff", "go", "html", "http", "javascript", "json", "makefile", "nginx", "python", "shell-session", "sql", "yaml"]
+
+[[menu.main]]
+    url = "/"
+    name = "Home"
+    weight = 1
+
+[[menu.main]]
+    url = "/post/"
+    name = "Posts"
+    weight = 2
+
+[[menu.main]]
+    url = "/snippet/"
+    name = "Snippets"
+    weight = 3
+
+[[menu.icon]]
+    url = "mailto:dhwebb@gmail.com"
+    name = "envelope-o"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://github.com/denniswebb/"
+    name = "github"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/devopscomplete/"
+    name = "linkedin"
+    weight = 3
+
+[[menu.icon]]
+    url = "https://medium.com/@denniswebb"
+    name = "medium"
+    weight = 4
