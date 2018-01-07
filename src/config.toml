@@ -1,4 +1,4 @@
-baseURL = "http://denniswebb.info/"
+baseURL = "http://denniswebb.info"
 languageCode = "en-us"
 title = "Dennis Webb"
 theme = "minimal"
