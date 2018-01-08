@@ -15,7 +15,7 @@ enableEmoji = true
     font = "Fira Mono"
     highlight = true
     highlightStyle = "tomorrow-night"
-    highlightLanguages = ["bash", "diff", "go", "html", "http", "javascript", "json", "makefile", "nginx", "python", "shell-session", "sql", "yaml"]
+    highlightLanguages = ["bash", "diff", "go", "html", "http", "javascript", "json", "makefile", "nginx", "python", "shellsession", "sql", "yaml"]
 
 [[menu.main]]
     url = "/"
