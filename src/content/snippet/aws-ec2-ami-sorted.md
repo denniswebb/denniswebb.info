@@ -1,10 +1,13 @@
 ---
 title: "Sorting AWS cli describe-images using jq"
 date: 2018-01-04
+tags: ["aws", "jq"]
 ---
 
 To query AWS for a list of AMIs based on filter criteria sorted by date:
-`aws ec2 describe-images --filters "Name=root-device-type,Values=ebs","Name=name,Values=amzn-ami-hvm-*" --owners=amazon | jq '.Images | sort_by(.CreationDate) | .[] | {Name: .Name, Created: .CreationDate, Id: .ImageId}'`
+```bash
+aws ec2 describe-images --filters "Name=root-device-type,Values=ebs","Name=name,Values=amzn-ami-hvm-*" --owners=amazon | jq '.Images | sort_by(.CreationDate) | .[] | {Name: .Name, Created: .CreationDate, Id: .ImageId}'
+```
 
 This command should output (shortened for brevity):
 ```json

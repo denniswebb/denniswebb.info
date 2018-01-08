@@ -1,6 +1,7 @@
 ---
 title: "Bulk Cancel of CircleCI Jobs"
 date: 2018-01-08
+tags: ["circleci","fish","curl"]
 ---
 Hopefully you will never need this.  Below is a small fish script that will cancel CircleCI jobs that are running/pending.
 ```bash
