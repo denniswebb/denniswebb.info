@@ -27,7 +27,7 @@ jobs:
     steps:
       - run:
           name: Install AWS CLI
-          command: yum install -y awscli tar
+          command: yum install -y awscli gzip tar
       - attach_workspace:
           at: src
       - run:
