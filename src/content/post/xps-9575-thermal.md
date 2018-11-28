@@ -7,8 +7,8 @@ Recently I purchased a [Dell XPS 15 9575](https://www.dell.com/en-sg/shop/tablet
 
 Manjaro is my Linux OS of choice. I adjusted with all the built-in settings and installed [TLP](https://github.com/linrunner/TLP) to help with the issue. I lowered the perfomance settings to full-time power-save mode. I still suffered the shutdown issues. After more Googling, I discovered that I needed to install [thermald](https://01.org/linux-thermal-daemon/documentation/introduction-thermal-daemon). Since installing and enabling thermald, my overheating issues have went away. I have also increased CPU performance back to performance settings while on AC power.
 
-## Installation on Arch/Manjaro Linux
-```
+### Installation on Arch/Manjaro Linux
+```bash
 sudo pacman -S thermald
 sudo systemctl enable thermald.service
 sudo systemctl start thermald.service

@@ -1,5 +1,5 @@
 ---
-title: "Kubernets Pod Logs to Elasticsearch"
+title: "Kubernetes Pod Logs to Elasticsearch"
 date: 2018-01-01
 tags: ["kubernetes", "logging", "elasticsearch", "fluentd", "jq", "curl"]
 ---
