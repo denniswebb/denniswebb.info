@@ -12,4 +12,5 @@ Manjaro is my Linux OS of choice. I adjusted with all the built-in settings and 
 sudo pacman -S thermald
 sudo systemctl enable thermald.service
 sudo systemctl start thermald.service
+sudo dbus-send --system --dest=org.freedesktop.thermald /org/freedesktop/thermald org.freedesktop.thermald.SetUserPassiveTemperature string:cpu uint32:80000
 ```
