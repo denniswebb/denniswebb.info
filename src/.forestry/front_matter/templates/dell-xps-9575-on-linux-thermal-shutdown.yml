@@ -1,7 +1,7 @@
 ---
 label: Dell XPS 9575 on Linux Thermal Shutdown
-hide_body: 
-is_partial: 
+hide_body: false
+is_partial: false
 fields:
 - name: title
   label: Title
